@@ -117,7 +117,7 @@ Modified Array: [ 'first', 'fourth', 'fifth' ]
 
 
 
-###### Copy an array*:
+###### *Copy an array*:
 
 ```
 var a = ['first', 'second', 'third', 'fourth'];
