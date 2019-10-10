@@ -1,2 +1,3 @@
-# ProgrammingExercises
-The repo will collect the programming exercises/ coding challenges that I solved on coding challenge websites 『e.g. HackerRank』
+Pengxiang Jia
+UVic Student
+This is my programming exercise solutions for HackerRank.com
