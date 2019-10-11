@@ -16,8 +16,8 @@ import sys
 #
 
 def dynamicArray(n, queries):
-    # n indicates the number of sequences that we will be using
-    seqList = [[] for i in range(n)] # Creating the Dynamic Arrray
+    ''' n indicates the number of sequences that we will be using'''
+    seqList = [[] for i in range(n)] 
     lastAnswer = 0
     result = []
     for query in queries:
@@ -29,20 +29,25 @@ def dynamicArray(n, queries):
             #print (query)
             seqList[seqIndex].append(query[2])
         if query[0] == 2:
-            seqIndex = (query[1]^lastAnswer) % n # N1^N2 is the right way to use bitwise XOR operator
+            seqIndex = (query[1]^lastAnswer) % n 
             #print(query)
+            #print(seqList)
             #print(lastAnswer)
             #print(seqIndex)
             #print(query[2]%n)
             #print(seqList)
-            lastAnswer = seqList[seqIndex][query[2]%n]
+            seq = seqList[seqIndex]
+            length = len(seq)
+            lastAnswer = seq[query[2]%length]
             result.append(lastAnswer)
-    return result   # the function is expected to return an iterator, and a list of lastAnswers are returned
+    return result
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    first_multiple_input = input().rstrip().split()
+    fp = open("test.txt")
+    lines = fp.readlines()
+    #print(line)
+    first_multiple_input = lines[0].rstrip().split()
 
     n = int(first_multiple_input[0])
 
@@ -50,12 +55,12 @@ if __name__ == '__main__':
 
     queries = []
 
-    for _ in range(q):
-        queries.append(list(map(int, input().rstrip().split())))
+    for i in range(q):
+        queries.append(list(map(int, lines[1+i].rstrip().split())))
 
     result = dynamicArray(n, queries)
 
-    fptr.write('\n'.join(map(str, result)))
-    fptr.write('\n')
+    print('\n'.join(map(str, result)), end='')
 
-    fptr.close()
+    fp.close()
+   
