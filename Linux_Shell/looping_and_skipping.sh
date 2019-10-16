@@ -7,3 +7,11 @@ do
     fi
     temp=$((temp+1))
 done
+
+
+# To be Pythonic
+
+# for number in {1..99..2}
+# do
+#     echo $number
+# done
