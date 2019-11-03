@@ -8,8 +8,7 @@ do
     temp=$((temp+1))
 done
 
-
-# To be Pythonic
+# TO be "Pythonic"
 
 # for number in {1..99..2}
 # do
